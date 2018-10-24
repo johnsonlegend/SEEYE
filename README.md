@@ -1,2 +1,4 @@
 # SEEYE
-Minimum Viable Product for SEEYE Tech
+Minimum Viable Product for SeeYe Tech
+
+Front end (ios) + Back end database
