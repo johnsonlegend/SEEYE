@@ -78,6 +78,35 @@ function seeyeClick(seeye_button) {
 }
 
 
+function createSeeyeItem(img_src, name, link) {
+	"Create a single product item."
+
+	var seeye_item = document.createElement("DIV")
+	seeye_item.className="seeye-item"
+	seeye_item.style.width="inherit"
+	seeye_item.style.height="inherit"
+	seeye_item.style.textAlign="center"
+
+	var a = document.createElement("A")
+	a.href = link
+	a.style.width="inherit"
+
+	var img = document.createElement("IMG")
+	img.src = img_src
+	img.style.width= "80%"
+	img.style.marginTop= "20px"
+
+	var p = document.createElement("P")
+	p.innerHTML = name
+	
+	// Append
+	a.appendChild(img)
+	a.appendChild(p)
+	seeye_item.appendChild(a)
+
+	return seeye_item
+}
+
 function createSeeyePopup() {
 	"Return seeye popup panel."
 
@@ -87,6 +116,7 @@ function createSeeyePopup() {
 	seeye_popup.style.display="none"
 	seeye_popup.style.right="0"
 	seeye_popup.style.zIndex="10"
+	seeye_popup.style.overflow="scroll"
 
 	// // Create popup panel
 	// var seeye_popup_panel = document.createElement("DIV")
@@ -95,24 +125,24 @@ function createSeeyePopup() {
 	// // Append
 	// seeye_popup.appendChild(seeye_popup_panel)
 
-	// Create a single product item
-	var seeye_item = document.createElement("DIV")
-	seeye_item.className="seeye-item"
-	seeye_item.style.width="inherit"
-	seeye_item.style.height="inherit"
-	seeye_item.style.textAlign="center"
-
-	var img = document.createElement("IMG")
-	img.src="https://slimages.macysassets.com/is/image/MCY/products/7/optimized/8893527_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$"
-	img.style.width="inherit"
-
-	var span = document.createElement("SPAN")
-	span.innerHTML="Brodyn Queen Bed"
+	// Create seeye items
+	var img_src = []
+	var name = []
+	var link = []
 	
-	// Append
-	seeye_item.appendChild(img)
-	seeye_item.appendChild(span)
-	seeye_popup.appendChild(seeye_item)
+	img_src.push("https://slimages.macysassets.com/is/image/MCY/products/9/optimized/3773449_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$")
+	name.push("Sunset coffee table")
+	link.push("https://www.macys.com/shop/product/sunset-coffee-table-quick-ship?ID=2911648&CategoryID=35423#fn=sp%3D1%26spc%3D1538%26ruleId%3D129%7CBOOST%20SAVED%20SET%7CBOOST%20ATTRIBUTE%26searchPass%3DmatchNone%2")
+	
+	img_src.push("https://slimages.macysassets.com/is/image/MCY/products/7/optimized/8893527_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$")
+	name.push("Brodyn Queen Bed")
+	link.push("https://www.macys.com/shop/product/brodyn-queen-bed-quick-ship?ID=5157496&tdp=cm_app~zMCOM-NAVAPP~xcm_zone~zPDP_ZONE_B~xcm_choiceId~zcidM06MAU-0a1a6c85-584a-4fd9-9668-021302acb95a%40H8%40customers%2Ba")
+	
+
+	for (var i = 0; i < img_src.length; i++) {
+		seeye_item = createSeeyeItem(img_src[i], name[i], link[i])
+		seeye_popup.appendChild(seeye_item)
+	}
 
 	return seeye_popup
 }
