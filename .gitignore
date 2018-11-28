@@ -1,4 +1,6 @@
 README.md
+.DS_Store
 *.png
 *.jpg
 *.mov
+!component3_demo1.png

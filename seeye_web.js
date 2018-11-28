@@ -81,6 +81,8 @@ function seeyeClick(seeye_button) {
 function createSeeyeItem(img_src, name, link) {
 	"Create a single product item."
 
+	var movie_player = document.getElementById('movie_player')
+
 	var seeye_item = document.createElement("DIV")
 	seeye_item.className="seeye-item"
 	seeye_item.style.width="inherit"
@@ -98,10 +100,39 @@ function createSeeyeItem(img_src, name, link) {
 
 	var p = document.createElement("P")
 	p.innerHTML = name
+
+	var rating = document.createElement("DIV")
+	rating.className="rating-star"
+	rating.style.position="relative"
+	rating.style.left=movie_player.offsetWidth / 6 - 31 + "px"
+
+	var star_outer = document.createElement("DIV")
+	star_outer.className="star-outer"
+	star_outer.style.position="absolute"
+	star_outer.style.top="0"
+	star_outer.style.left="0"
+	star_outer.style.whiteSpace="nowrap"
+
+	var star_inner = document.createElement("DIV")
+	star_inner.className="star-inner"
+	star_inner.style.position="absolute"
+	star_inner.style.top="0"
+	star_inner.style.left="0"
+	star_inner.style.whiteSpace="nowrap"
+	star_inner.style.overflow="hidden"
+	star_inner.style.width="43.5px"
+
+	star_outer.innerHTML='<i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>'
+
+	star_inner.innerHTML='<i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>'
+
+	rating.appendChild(star_outer)
+	rating.appendChild(star_inner)
 	
 	// Append
 	a.appendChild(img)
 	a.appendChild(p)
+	a.appendChild(rating)
 	seeye_item.appendChild(a)
 
 	return seeye_item
