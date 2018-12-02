@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Seeye</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_shoppingcart">Shopping cart</string>
+    <string name="title_tvshow">HGTV: House Hunters</string>
+</resources>
