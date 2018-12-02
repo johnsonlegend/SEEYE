@@ -4,11 +4,11 @@ Minimum Viable Product for SeeYe Tech
 
 Front end (iOS/Andrioid) + Back end database (AWS MySQL)
 
-* Component 1: iOS/Android app that links to a tv**
+* Component 1: iOS/Android app that links to a tv
 
-* Component 2: while watching a streaming tv show on your cell phone**
+* Component 2: while watching a streaming tv show on your cell phone
 
-* Component 3: while watching videos on your laptop**
+* Component 3: while watching videos on your laptop
 
 <br>
 
