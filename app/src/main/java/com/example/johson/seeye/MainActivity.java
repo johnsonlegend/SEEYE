@@ -1,15 +1,22 @@
 package com.example.johson.seeye;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+
+    ImageButton seeyeImageButton;
+    ImageButton seeyeImageButton2;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -39,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        seeyeImageButton = (ImageButton) findViewById(R.id.image_button);
+        seeyeImageButton2 = (ImageButton) findViewById(R.id.image_button2);
+
+        seeyeImageButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), PopupAcitivity.class);
+                startActivity(i);
+            }
+        });
+//        seeyeImageButton2.setOnClickListener((View.OnClickListener) this);
     }
 
 }

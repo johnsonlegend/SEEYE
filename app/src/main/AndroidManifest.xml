@@ -18,7 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"></activity>
+        <activity
+            android:name=".PopupAcitivity"
+            android:theme="@style/AppTheme.PopMe" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".ChairActivity"></activity>
     </application>
 
 </manifest>

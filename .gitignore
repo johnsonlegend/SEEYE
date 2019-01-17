@@ -4,5 +4,7 @@ README.md
 slack*.jpg
 *.mov
 !component3_demo1.png
-!app/
-
+app/.gradle/
+app/.idea/
+app/app.iml
+app/build.gradle
