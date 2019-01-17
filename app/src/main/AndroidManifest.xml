@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PopupAcitivity"
+            android:name=".PopupActivity"
             android:theme="@style/AppTheme.PopMe" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".ChairActivity"></activity>

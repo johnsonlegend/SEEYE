@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         seeyeImageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(), PopupAcitivity.class);
+                Intent i = new Intent(getApplicationContext(), PopupActivity.class);
                 startActivity(i);
             }
         });
