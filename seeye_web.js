@@ -138,6 +138,56 @@ function createSeeyeItem(img_src, name, link) {
 	return seeye_item
 }
 
+function createTwoCategory(catg1, catg2, img_src1, img_src2) {
+	"Return two-column-style category."
+
+	var seeye_two_catg = document.createElement("DIV")
+	seeye_two_catg.className="seeye-two-catg"
+	seeye_two_catg.style.width="inherit"
+	seeye_two_catg.style.textAlign="center"
+
+	// two-column-style, float:left
+	var left = document.createElement("DIV")
+	left.style.width="50%"
+	left.style.float="left"
+	var right = document.createElement("DIV")
+	right.style.width="inherit"
+
+	var img1 = document.createElement("IMG")
+	img1.src = img_src1
+	img1.style.width= "90%"
+	img1.style.marginTop= "10px"
+	var p1 = document.createElement("P")
+	p1.innerHTML = catg1
+	p1.style.display="inline"
+
+	var img2 = document.createElement("IMG")
+	img2.src = img_src2
+	img2.style.width= "45%"
+	img2.style.marginTop= "10px"
+	var p2 = document.createElement("P")
+	p2.innerHTML = catg2
+	p2.style.display="inline"
+
+	left.appendChild(img1)
+	left.appendChild(p1)
+	right.appendChild(img2)
+	right.appendChild(p2)
+	seeye_two_catg.appendChild(left)
+	seeye_two_catg.appendChild(right)
+
+	return seeye_two_catg
+}
+
+function createSeeyeCategory(seeye_popup) {
+	"Create category div in two-column-style."
+
+	seeye_two_catg1 = createTwoCategory("Table", "Bed", "https://slimages.macysassets.com/is/image/MCY/products/9/optimized/3773449_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$", "https://slimages.macysassets.com/is/image/MCY/products/7/optimized/8893527_fpx.tif?op_sharpen=1&wid=1230&hei=1500&fit=fit,1&$filterxlrg$")
+	seeye_two_catg2 = createTwoCategory("Sofa", "Cabinet", "https://res-5.cloudinary.com/goedeker-s/image/upload/d_notavl.jpg/v1/media/catalog/product/s/i/simmons-6485-03-albany-slate.jpg", "https://scontent-amt2-1.cdninstagram.com/vp/52d57e1043152edcf4830fd6cf743410/5C925FB1/t51.2885-15/e35/44576124_270297947005818_8443078414178563520_n.jpg")
+	seeye_popup.appendChild(seeye_two_catg1)
+	seeye_popup.appendChild(seeye_two_catg2)
+}
+
 function createSeeyePopup() {
 	"Return seeye popup panel."
 
@@ -169,13 +219,18 @@ function createSeeyePopup() {
 	name.push("Brodyn Queen Bed")
 	link.push("https://www.macys.com/shop/product/brodyn-queen-bed-quick-ship?ID=5157496&tdp=cm_app~zMCOM-NAVAPP~xcm_zone~zPDP_ZONE_B~xcm_choiceId~zcidM06MAU-0a1a6c85-584a-4fd9-9668-021302acb95a%40H8%40customers%2Ba")
 	
+	// TODO
+	// for (var i = 0; i < img_src.length; i++) {
+		// seeye_item = createSeeyeItem(img_src[i], name[i], link[i])
+		// seeye_popup.appendChild(seeye_item)
+	// }
 
-	for (var i = 0; i < img_src.length; i++) {
-		seeye_item = createSeeyeItem(img_src[i], name[i], link[i])
-		seeye_popup.appendChild(seeye_item)
-	}
+	createSeeyeCategory(seeye_popup)
 
 	return seeye_popup
 }
+
+
+
 
 
